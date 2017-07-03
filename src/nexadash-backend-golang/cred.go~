@@ -1,0 +1,20 @@
+package models
+
+import (
+	"encoding/json"
+	"fmt"
+	_ "github.com/jinzhu/gorm/dialects/postgres"
+	"net/http"
+	"nexadash-backend-go/basemodel"
+)
+
+type Shell struct {
+	ID           string `gorm:"primary_key"`
+	Project_id   string
+	Ssh_username string `gorm:"not null;unique"`
+	Ssh_password string `gorm:"not null"`
+	Ssh_key      string
+	Sudo         bool
+}
+
+func CredModel()

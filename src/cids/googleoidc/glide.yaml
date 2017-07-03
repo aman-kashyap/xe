@@ -1,0 +1,7 @@
+package: cids/googleoidc
+import:
+- package: github.com/coreos/go-oidc
+- package: golang.org/x/net
+  subpackages:
+  - context
+- package: golang.org/x/oauth2

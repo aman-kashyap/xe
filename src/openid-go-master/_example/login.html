@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>go OpenID sample app</title>
+    <script>
+    function setId(id) {
+      document.forms[0].id.value = id;
+      document.forms[0].submit();
+      return false;
+    }
+    </script>
+  </head>
+  <body>
+    <h1>Login</h1>
+
+    <form action="/discover" method="POST">
+      <input type="hidden" name="id">
+    </form>
+
+    <h2>Sign in with:</h2>
+    <ul>
+      <li>
+        <button onclick="return setId('https://me.yahoo.com')">
+          Yahoo!
+        </button>
+      </li>
+      <li>
+        <button onclick="return setId('http://steamcommunity.com/openid')">
+          Steam
+        </button>
+      </li>
+      <li>
+        <!-- 
+          OpenID 2.0 Spec point 7.1 http://openid.net/specs/openid-authentication-2_0.html#initiation
+          
+          Browser extensions or other software that support OpenID Authentication
+          can detect an OpenID input field if it has the "name" attribute set to "openid_identifier"
+        -->
+        <input type="text" id="idfield" name="openid_identifier">
+        <button onclick="return setId(document.getElementById('idfield').value);">
+          Go
+        </button>
+      </li>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+package: nexadash-backend-go
+import:
+- package: github.com/gorilla/mux
+  version: ^1.4.0
+- package: github.com/jinzhu/gorm
+  version: ^1.0.0
+  subpackages:
+  - dialects/postgres
